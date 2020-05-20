@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,27 +24,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tablayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorProject"
-                app:tabSelectedTextColor="@android:color/white"
-                app:tabTextColor="@android:color/white">
-
-            </com.google.android.material.tabs.TabLayout>
-
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title="Bosh sahifa" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewpage"
+        <FrameLayout
+            android:id="@+id/FramLayoutForFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </androidx.viewpager.widget.ViewPager>
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 
@@ -55,7 +44,11 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_home_navigation"
-        app:menu="@menu/activity_home_navigation_drawer" />
+        app:menu="@menu/activity_home_navigation_drawer"
+        app:itemTextColor="@color/colorProject"
+        app:itemIconTint="@color/colorProject">
+
+    </com.google.android.material.navigation.NavigationView>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

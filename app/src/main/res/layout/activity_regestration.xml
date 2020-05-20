@@ -20,74 +20,61 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:padding="5dp"
-                android:textColorHint="@color/colorProject">
+                android:textColorHint="@color/colorProject"
+                app:counterEnabled="true"
+                app:counterMaxLength="20"
+                android:hint="Login">
 
                 <EditText
                     android:id="@+id/UserLgin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="1"
-                    android:focusable="auto"
-                    android:focusableInTouchMode="true"
-                    android:hint="Login"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:maxLength="20"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/inputUserEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
+                android:textColorHint="@color/colorProject"
                 android:padding="5dp"
-                android:textColorHint="@color/colorProject">
+                android:hint="Email">
 
                 <EditText
                     android:id="@+id/UserEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="2"
-                    android:focusable="auto"
-                    android:focusableInTouchMode="true"
-                    android:hint="Email"
-                    android:inputType="text|textEmailAddress" />
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:padding="5dp"
-                android:textColorHint="@color/colorProject">
+                android:textColorHint="@color/colorProject"
+                android:hint="Ism">
 
                 <EditText
                     android:id="@+id/UserName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="3"
-                    android:focusable="auto"
-                    android:focusableInTouchMode="true"
-                    android:hint="Ism"
                     android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:padding="5dp"
-                android:textColorHint="@color/colorProject">
+                android:textColorHint="@color/colorProject"
+                android:hint="Telefon raqam">
 
                 <com.santalu.maskedittext.MaskEditText
                     android:id="@+id/UserPhoneNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Telefon raqam"
                     android:inputType="phone"
                     app:met_mask="+998 ## ### ## ##" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -95,20 +82,15 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:padding="5dp"
                 android:textColorHint="@color/colorProject"
-                app:passwordToggleEnabled="true">
+                app:passwordToggleEnabled="true"
+                android:hint="Parol">
 
                 <EditText
                     android:id="@+id/UserPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="1"
-                    android:focusable="auto"
-                    android:focusableInTouchMode="true"
-                    android:hint="Parol"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 

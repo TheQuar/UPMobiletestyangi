@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.PassangerBlankFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="Qachon ketasiz (yil-oy-kun soat:daqiqa)"
+                android:padding="10dp">
+
+                <com.santalu.maskedittext.MaskEditText
+                    android:id="@+id/pasBlank_ketish_vaqti"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_data_pick"
+                    android:inputType="datetime"
+                    android:textSize="15sp"
+                    app:met_mask="####-##-## ##:##" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Jo'nash nuqtasi"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorProject"/>
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent" />
+
+
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorProject"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Borish kerak bo'lgan viloyat:"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorProject"/>
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent" />
+
+                <Spinner
+                    android:id="@+id/spinner4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorProject"/>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Manzil haqida batafsil"
+                android:padding="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pasBlank_manzil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Narxi (so'm)"
+                android:padding="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pasBlank_narxi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Necha kishi"
+                android:padding="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pasBlank_odamSoni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Qanday avtomobilda borasiz (Nexia,Cobalt)"
+                android:padding="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pasBlank_avtTur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/pasBlank_back_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Orqaga"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/mbutton"
+                    android:padding="16dp"/>
+
+                <Space
+                    android:layout_width="72dp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/pasBlank_add_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="E'lonni joylash"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/mbutton"
+                    android:padding ="16dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>

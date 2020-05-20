@@ -3,36 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
-    </group>
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Bosh sahifa" />
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
-        </menu>
-    </item>
+    <item
+        android:id="@+id/nav_my_info"
+        android:title="Mening Ma'lumotim"
+        android:icon="@drawable/ic_my_data"/>
 
+    <item
+        android:id="@+id/nav_elon"
+        android:title="Mening E'lonlarim"
+        android:icon="@drawable/ic_blank"/>
+
+    <item
+        android:id="@+id/nav_elon_add"
+        android:title="Yangi E'lon Qo'shish"
+        android:icon="@drawable/ic_add_blank"/>
+
+    <item
+        android:id="@+id/nav_exit"
+        android:title="Chiqish"
+        android:icon="@drawable/ic_exit"/>
 </menu>

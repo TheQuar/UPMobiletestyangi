@@ -14,6 +14,7 @@ import com.example.upmobiletest.PostRetrofit.RegistrationRetrofit;
 import com.google.android.material.textfield.TextInputLayout;
 import com.santalu.maskedittext.MaskEditText;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,7 +31,6 @@ public class Regestration extends AppCompatActivity {
 
     private EditText userLogin, userName, userEmail, userPassword;
     private MaskEditText userPhoneNumber;
-    private TextInputLayout inputuserEmail;
     private String userLoginStr, userNameStr, userEmailStr, userPasswordStr, userPhoneStr;
     private Button regBtn;
 
@@ -39,6 +39,7 @@ public class Regestration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regestration);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         userLogin = findViewById(R.id.UserLgin);
         userName = findViewById(R.id.UserName);
@@ -46,11 +47,8 @@ public class Regestration extends AppCompatActivity {
         userPassword = findViewById(R.id.UserPassword);
         userPhoneNumber = findViewById(R.id.UserPhoneNumber);
 
-        inputuserEmail = findViewById(R.id.inputUserEmail);
-
 
         regBtn = findViewById(R.id.regbtn);
-
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +60,7 @@ public class Regestration extends AppCompatActivity {
                 userPhoneStr = userPhoneNumber.getRawText();
 
                 if (isEmpty(userLoginStr)) {
-                    userLogin.setError("Iltimos Login ni kiriting !");
+                    userLogin.setError("Iltimos Loginni kiriting !");
                 } else if (isEmpty(userNameStr)) {
                     userName.setError("Iltimos Ismingizni kiriting !");
                 } else if (isEmpty(userEmailStr)) {
@@ -87,25 +85,32 @@ public class Regestration extends AppCompatActivity {
 
                                 JSONObject getResultPostJsonObject = new JSONObject(s);
                                 String postResult = getResultPostJsonObject.getString("status");
-                                JSONObject getDataPostJsonObject = getResultPostJsonObject.getJSONObject("data");
-                                //JSONArray jsonArray = getDataPostJsonObject.getJSONArray("username");
-
 
                                 if (postResult.equals("true")) {
-                                    Intent intent = new Intent(Regestration.this, HomeNavigation.class);
+                                    Intent intent = new Intent(Regestration.this, MainActivity.class);
                                     startActivity(intent);
+                                    finish();
                                 } else {
-                                    Toast.makeText(Regestration.this, "error ! \n" + getDataPostJsonObject.toString()
-                                            , Toast.LENGTH_LONG).show();
-                                }
+                                    JSONArray getlabelPostJsonArray = getResultPostJsonObject.getJSONArray("label");
+                                    JSONArray getinfoPostJsonArray = getResultPostJsonObject.getJSONArray("info");
+                                    for (int i = 0; i < getlabelPostJsonArray.length(); i++) {
 
+                                        if (getlabelPostJsonArray.getString(i).equals("username")) {
+                                            userName.setError(getinfoPostJsonArray.getString(i));
+                                        } else if (getlabelPostJsonArray.getString(i).equals("phone")) {
+                                            userPhoneNumber.setError(getinfoPostJsonArray.getString(i));
+                                        } else if (getlabelPostJsonArray.getString(i).equals("name")) {
+                                            userLogin.setError(getinfoPostJsonArray.getString(i));
+                                        } else if (getlabelPostJsonArray.getString(i).equals("password")) {
+                                            userPassword.setError(getinfoPostJsonArray.getString(i));
+                                        }
+                                    }
+                                }
 
                             } catch (IOException | JSONException e) {
                                 e.printStackTrace();
                                 Toast.makeText(Regestration.this, e.getMessage(), Toast.LENGTH_LONG).show();
                             }
-
-
                         }
 
                         @Override
@@ -113,7 +118,6 @@ public class Regestration extends AppCompatActivity {
                             Toast.makeText(Regestration.this, t.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     });
-
                 }
             }
         });
